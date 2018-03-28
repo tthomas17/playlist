@@ -84,14 +84,15 @@ class Filter extends Component {
 
 class Playlist extends Component {
   render() {
+    const {playlist} = this.props
     return (
         <div className="playlist">
           <img src='#' className="playlist__img" />
-          <h3 className="playlist__heading">Playlist Name</h3>
+          <h3 className="playlist__heading">{playlist.name}</h3>
           <ul className="playlist__list">
-            <li className="playlist__listitem">Song</li>
-            <li className="playlist__listitem">Song</li>
-            <li className="playlist__listitem">Song</li>
+            {playlist.songs.map(song =>
+              <li className="playlist__listitem">{song.name}</li>
+              )}
           </ul>
         </div>
       )
@@ -125,10 +126,9 @@ class App extends Component {
               playlists = {this.state.serverData.user.playlists } 
             />
             <Filter />
-            <Playlist />
-            <Playlist />
-            <Playlist />
-            <Playlist />
+            {this.state.serverData.user.playlists.map( playlist =>
+                 <Playlist playlist={playlist} />
+              )}
           </div>
           : <h1 className='loading'>Loading...</h1>
       }
