@@ -2,7 +2,7 @@
 
 High-Fidelity React JS Prototype for a playlist app using OAuth2 and the Spotify API.
 
-Based on [this Tutorial](https://www.youtube.com/playlist?list=PLqGj3iMvMa4LFqyGab_aR7M0zfQm2KTuX) on [Dev Tips]https://www.youtube.com/channel/UCyIe-61Y8C4_o-zZCtO4ETQ) with [@mpjme](https://twitter.com/mpjme) of [Fun Fun Function](https://www.youtube.com/funfunfunction) and [Data David](https://www.youtube.com/channel/UC0TQC6ZPNm23dU6ecc5x0Gg).
+Based on [this Tutorial](https://www.youtube.com/playlist?list=PLqGj3iMvMa4LFqyGab_aR7M0zfQm2KTuX) on [Dev Tips](https://www.youtube.com/channel/UCyIe-61Y8C4_o-zZCtO4ETQ) with [@mpjme](https://twitter.com/mpjme) of [Fun Fun Function](https://www.youtube.com/funfunfunction) and [Data David](https://www.youtube.com/channel/UC0TQC6ZPNm23dU6ecc5x0Gg).
 
 
 ### What I Learned
