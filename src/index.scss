@@ -1,0 +1,34 @@
+
+$color-text-default: #fff;
+$color-background:  #222;
+
+
+body {
+	background: $color-background;
+	font-family: sans-serif;
+	height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+
+}
+
+h1 {
+  font-size: 54px;
+  color: $color-text-default;
+}
+
+
+.aggregate {
+  width: 40%;
+  display: inline-block;
+  color: $color-text-default;
+}
+
+.playlist {
+	width: 25%;
+	color: $color-text-default; 
+	display: inline-block;
+}
+
