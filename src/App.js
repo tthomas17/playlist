@@ -6,7 +6,7 @@ let fakeServerData = {
     name: 'Tyler',
     playlists: [
       {
-        name: 'MyFavorites', 
+        name: 'Discover Weekly', 
         songs: [ 
           {name:'song1', duration: 1345},
           {name:'song2', duration: 1345}, 
@@ -14,7 +14,7 @@ let fakeServerData = {
          ]
       },
       {
-        name: 'MyFavorites', 
+        name: 'Tye', 
         songs: [  
           {name:'song1', duration: 1345},   
           {name:'song2', duration: 1345},  
@@ -22,7 +22,7 @@ let fakeServerData = {
         ]
       },
       {
-        name: 'MyFavorites', 
+        name: 'Tye2', 
         songs: [ 
           {name:'song1', duration: 1345},
           {name:'song2', duration: 1345}, 
@@ -30,7 +30,7 @@ let fakeServerData = {
         ]
       },
       {
-        name: 'MyFavorites', 
+        name: 'Flow', 
         songs: [ 
           {name:'song1', duration: 1345},
           {name:'song2', duration: 1345}, 
@@ -74,7 +74,7 @@ class Filter extends Component {
     return (
         <div>
           <img/>
-          <input type="text"/>
+          <input onKeyUp={event=> this.props.onTextChange(event.target.value) } type="text"/>
         </div>
 
 
@@ -104,13 +104,13 @@ class App extends Component {
     super();
 
     this.state = {
-      serverData: {}
+      serverData: {},
+      queryString: ''
     }
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({serverData: fakeServerData}), 1000);
-    
+    setTimeout(() => this.setState({serverData: fakeServerData}), 1000);  
   }
 
   render() {
@@ -125,8 +125,11 @@ class App extends Component {
             <HoursCounter
               playlists = {this.state.serverData.user.playlists } 
             />
-            <Filter />
-            {this.state.serverData.user.playlists.map( playlist =>
+            <Filter onTextChange={query => this.setState({queryString: query})} />
+            {this.state.serverData.user.playlists.filter(playlist => 
+              playlist.name.toLowerCase().includes(
+                this.state.queryString.toLowerCase())
+              ).map( playlist =>
                  <Playlist playlist={playlist} />
               )}
           </div>
